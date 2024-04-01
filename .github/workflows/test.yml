@@ -8,15 +8,9 @@ jobs:
     strategy: 
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.9", "3.10", "3.11", "pypy3.9", "pypy3.10"]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "pypy3.9", "pypy3.10"]
     steps:
       - uses: actions/checkout@v4
       - run: echo "job running on ${{ runner.os }}"
       - run: python -V
       - run: python -m unittest discover
-      # - if: runner.os == 'Windows'
-      #   run: python -m unittest tests\*.py
-      #   # run: echo "Running on Windows ${{ runner.os == 'Windows' }}"
-      # - if: ${{ runner.os != 'Windows' }}
-      #   run: python -m unittest tests/*.py
-        # run: echo "running on Non Windows ${{ runner.os != 'Windows' }}"
