@@ -14,6 +14,6 @@ jobs:
       - run: echo "job running on ${{ runner.os }}"
       - run: python -V
       - if: ${{ runner.os }} == "Windows"
-        run: echo "Running on Windows"
+        run: echo "Running on Windows ${{ runner.os == 'Windows' }}"
       - if: ${{ runner.os }} != Windows
-        run: echo "running on Non Windows"
+        run: echo "running on Non Windows ${{ runner.os != 'Windows' }}"
