@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v4
       - run: echo "job running on ${{ runner.os }}"
       - run: python -V
-      - run: ./run_tests.sh
+      - run: python -m unittest
