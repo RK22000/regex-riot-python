@@ -28,4 +28,4 @@ class LiteralsStringValueTests(unittest.TestCase):
     def test_custom_string(self):
         words = ['hello','there', ',', ' ', 'general', 'kenobi']
         for w in words:
-            self.assertEqual(str(RiotString(w)), w)
+            self.assertEqual(str(riot(w)), w)

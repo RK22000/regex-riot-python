@@ -5,6 +5,7 @@ this module.
 """
 
 import re
+import _operations
 
 class RiotString:
     """
@@ -20,31 +21,32 @@ class RiotString:
     
     """
 
-    def __init__(self, re, unit=False) -> None:
+    def __init__(self, a, b, combinator, unit) -> None:
         """Create a RiotString from a given expression. Use this to create a 
         building block from which you will build up to what ever complicated 
         regex you actually want. 
         Something like
-        `RiotString("Annie are you okay ").then("are you okay ").times(2).then("Annie")`
-        to make the regex `"Annie are you okay (are you okay ){2}Annie`
+        ``RiotString("Annie are you okay ").then("are you okay ").times(2).then("Annie")``
+        to make the regex ``"Annie are you okay (are you okay ){2}Annie``
         
         """
-        self._a = str(re)
-        self._b = ""
+        self._a = str(a)
+        self._b = str(b)
+        self._combinator = combinator
         self._unit = unit
 
-    @property
-    def a(self):
-        return self._a
-    @property
-    def b(self):
-        return self._b
-    @property
-    def unit(self):
-        return self._unit
+    # @property
+    # def a(self):
+    #     return self._a
+    # @property
+    # def b(self):
+    #     return self._b
+    # @property
+    # def unit(self):
+    #     return self._unit
 
     def __str__(self) -> str:
-        return self.a + self.b
+        return self._combinator(self._a, self._b)
     
     def then(self, rs):
         """
@@ -57,10 +59,8 @@ class RiotString:
         ----------
         rs: The next RiotString or string
 
-
-
         """
-        return RiotString(str(self)+str(rs))
+        return RiotString(self,rs, _operations.then, False)
     def one_or_more(self):
         """
         The current RiotString repeated one or more times.
@@ -71,10 +71,12 @@ class RiotString:
         ``RiotString('a').one_or_more() => RiotString('a+')``
 
         """
-        if self.unit:
-            return RiotString(f"{self.a}+")
-        else:
-            return RiotString(f"({self.a})+")
+        regex = _operations.one_or_more(self._a, self._unit)
+        return RiotString(regex, "", lambda a,b: a, True)
+        # if self._unit:
+        #     return RiotString(f"{self._a}+", "", lambda a,b: a, True)
+        # else:
+        #     return RiotString(f"({self._a})+", "", lambda a,b: a, True)
     
     def compile(self) -> re.Pattern:
         """Return the compiled regex. This is the result of ``re.compile("pattern")``"""
@@ -83,23 +85,26 @@ class RiotString:
 one_or_more = RiotString.one_or_more
 
 
-DIGIT       = RiotString(r'\d', unit=True)
+DIGIT       = RiotString(r'\d', "", lambda a,b: a, unit=True)
 'RiotString for a digit. ``\d``'
-NON_DIGIT   = RiotString(r'\D', unit=True)
+NON_DIGIT   = RiotString(r'\D', "", lambda a,b: a, unit=True)
 'RiotString for non digit. ``\D``'
-ANYTHING    = RiotString(r'.', unit=True)
+ANYTHING    = RiotString(r'.', "", lambda a,b: a, unit=True)
 'RiotString to match any digit. ``.``'
-ALPHANUM    = RiotString(r'\w', unit=True)
+ALPHANUM    = RiotString(r'\w', "", lambda a,b: a, unit=True)
 'RiotString to match any alphanumeric character. ``\w``'
-NON_ALPHANUM= RiotString(r'\W', unit=True)
+NON_ALPHANUM= RiotString(r'\W', "", lambda a,b: a, unit=True)
 'RiotString to match any non-alphanumeric character. ``\W``'
-SPACE       = RiotString(r'\s', unit=True)
+SPACE       = RiotString(r'\s', "", lambda a,b: a, unit=True)
 'RiotString to match any space character. ``\s``'
-NON_SPACE   = RiotString(r'\S', unit=True)
+NON_SPACE   = RiotString(r'\S', "", lambda a,b: a, unit=True)
 'RiotString to match any non-space character. ``\S``'
-BOUNDARY    = RiotString(r'\b', unit=True)
+BOUNDARY    = RiotString(r'\b', "", lambda a,b: a, unit=True)
 'RiotString to match a character at a boundary position. ``\b``'
-NON_BOUNDARY= RiotString(r'\B', unit=True)
+NON_BOUNDARY= RiotString(r'\B', "", lambda a,b: a, unit=True)
 'RiotString to match a character not at a boundary position. ``\B``'
-DOT         = RiotString(r'\.', unit=True)
+DOT         = RiotString(r'\.', "", lambda a,b: a, unit=True)
 'RiotString to match a dot. ``\.``'
+
+def riot(seed):
+    return RiotString(seed, "", lambda a,b: a, len(seed)==1)

@@ -13,6 +13,6 @@ class RiotOperationsString(unittest.TestCase):
     
     def test_one_or_more(self):
         self.assertEqual(str(DIGIT.one_or_more()), r'\d+')
-        self.assertEqual(str(RiotString('hello').one_or_more()), r'(hello)+')
+        self.assertEqual(str(riot('hello').one_or_more()), r'(hello)+')
         self.assertEqual(str(one_or_more(DIGIT)), r'\d+')
-        self.assertEqual(str(one_or_more(RiotString('hello'))), r'(hello)+')
+        self.assertEqual(str(one_or_more(riot('hello'))), r'(hello)+')
