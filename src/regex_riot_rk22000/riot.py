@@ -80,7 +80,7 @@ class RiotString:
         """Return the compiled regex. This is the result of ``re.compile("pattern")``"""
         return re.compile(str(self))
 
-# one_or_more = RiotString.one_or_more
+one_or_more = RiotString.one_or_more
 
 
 DIGIT       = RiotString(r'\d', unit=True)
