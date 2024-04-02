@@ -208,6 +208,14 @@ this module.</p>
 <dt class="sig sig-object py" id="regex_riot_rk22000.riot.RiotString">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">regex_riot_rk22000.riot.</span></span><span class="sig-name descname"><span class="pre">RiotString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">re</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#regex_riot_rk22000.riot.RiotString" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is the object that will hold and mutate regular expressions. 
+RiotStrings can be composed together to build more complicated regular 
+expressions.</p>
+<p>For instance the expression <cite>d+.d+</cite> can be built using RiotStrings as 
+<cite>one_or_more(DIGIT).then(DOT).then(one_or_more(DIGIT))</cite>. Although this is 
+not as consice as writing the regex itself, with the help of autocomplete it 
+will be easier to write write regex as a chain of function calls that read
+that read out to english like text.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="regex_riot_rk22000.riot.RiotString.a">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">a</span></span><a class="headerlink" href="#regex_riot_rk22000.riot.RiotString.a" title="Link to this definition">#</a></dt>
@@ -226,7 +234,8 @@ this module.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="regex_riot_rk22000.riot.RiotString.one_or_more">
 <span class="sig-name descname"><span class="pre">one_or_more</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#regex_riot_rk22000.riot.RiotString.one_or_more" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Hello</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="regex_riot_rk22000.riot.RiotString.then">
@@ -242,8 +251,9 @@ this module.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="regex_riot_rk22000.riot.one_or_more">
-<span class="sig-prename descclassname"><span class="pre">regex_riot_rk22000.riot.</span></span><span class="sig-name descname"><span class="pre">one_or_more</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#regex_riot_rk22000.riot.RiotString" title="regex_riot_rk22000.riot.RiotString"><span class="pre">RiotString</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#regex_riot_rk22000.riot.one_or_more" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">regex_riot_rk22000.riot.</span></span><span class="sig-name descname"><span class="pre">one_or_more</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#regex_riot_rk22000.riot.one_or_more" title="Link to this definition">#</a></dt>
+<dd><p>Hello</p>
+</dd></dl>
 
 </section>
 <section id="module-regex_riot_rk22000">
