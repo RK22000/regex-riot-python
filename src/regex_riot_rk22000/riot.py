@@ -7,6 +7,19 @@ this module.
 import re
 
 class RiotString:
+    """
+    This is the object that will hold and mutate regular expressions. 
+    RiotStrings can be composed together to build more complicated regular 
+    expressions. 
+    
+    For instance the expression `\d+\.\d+` can be built using RiotStrings as 
+    `one_or_more(DIGIT).then(DOT).then(one_or_more(DIGIT))`. Although this is 
+    not as consice as writing the regex itself, with the help of autocomplete it 
+    will be easier to write write regex as a chain of function calls that read
+    that read out to english like text.
+    
+    """
+
     def __init__(self, re, unit=False) -> None:
         self._a = str(re)
         self._b = ""
@@ -28,6 +41,7 @@ class RiotString:
     def then(self, rs):
         return RiotString(str(self)+str(rs))
     def one_or_more(self):
+        'Hello'
         if self.unit:
             return RiotString(f"{self.a}+")
         else:
@@ -36,14 +50,7 @@ class RiotString:
     def compile(self) -> re.Pattern:
         return re.compile(str(self))
 
-
-
-    # def __eq__(self, __value: object) -> bool:
-    #     if isinstance(__value, str) or isinstance(__value, RiotString):
-    #         return str(self)==str(__value)
-
-def one_or_more(rs:RiotString):
-    return rs.one_or_more()
+one_or_more = RiotString.one_or_more
 
 
 DIGIT       = RiotString(r'\d', unit=True)
