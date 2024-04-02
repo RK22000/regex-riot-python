@@ -37,6 +37,8 @@ class RiotString:
 
     def __str__(self) -> str:
         return self._combinator(self._a, self._b)
+    def __repr__(self) -> str:
+        return f'<RiotString: "{str(self)}">'
     
     def then(self, rs):
         """
