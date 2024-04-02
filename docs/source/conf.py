@@ -14,7 +14,7 @@ release = '0.0.1'
 import sys
 import os
 sys.path.append(os.path.join('..','src'))
-sys.path.append(os.path.join('..', 'tests'))
+sys.path.append(os.path.join('..'))
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
