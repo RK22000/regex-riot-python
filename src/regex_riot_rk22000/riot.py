@@ -35,16 +35,6 @@ class RiotString:
         self._combinator = combinator
         self._unit = unit
 
-    # @property
-    # def a(self):
-    #     return self._a
-    # @property
-    # def b(self):
-    #     return self._b
-    # @property
-    # def unit(self):
-    #     return self._unit
-
     def __str__(self) -> str:
         return self._combinator(self._a, self._b)
     
@@ -73,10 +63,6 @@ class RiotString:
         """
         regex = _operations.one_or_more(self._a, self._unit)
         return RiotString(regex, "", lambda a,b: a, True)
-        # if self._unit:
-        #     return RiotString(f"{self._a}+", "", lambda a,b: a, True)
-        # else:
-        #     return RiotString(f"({self._a})+", "", lambda a,b: a, True)
     
     def compile(self) -> re.Pattern:
         """Return the compiled regex. This is the result of ``re.compile("pattern")``"""
@@ -107,4 +93,7 @@ DOT         = RiotString(r'\.', "", lambda a,b: a, unit=True)
 'RiotString to match a dot. ``\.``'
 
 def riot(seed):
+    """
+    Simplified interface for RiotString
+    """
     return RiotString(seed, "", lambda a,b: a, len(seed)==1)
