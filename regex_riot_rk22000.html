@@ -61,6 +61,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#regex_riot_rk22000.riot.NON_SPACE"><code class="docutils literal notranslate"><span class="pre">NON_SPACE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#regex_riot_rk22000.riot.RiotString"><code class="docutils literal notranslate"><span class="pre">RiotString</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#regex_riot_rk22000.riot.SPACE"><code class="docutils literal notranslate"><span class="pre">SPACE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#regex_riot_rk22000.riot.one_or_more"><code class="docutils literal notranslate"><span class="pre">one_or_more()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-regex_riot_rk22000">Module contents</a></li>
@@ -220,6 +221,16 @@ Use like so</p>
 <dt class="sig sig-object py" id="regex_riot_rk22000.riot.SPACE">
 <span class="sig-prename descclassname"><span class="pre">regex_riot_rk22000.riot.</span></span><span class="sig-name descname"><span class="pre">SPACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;regex_riot_rk22000.riot.RiotString</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#regex_riot_rk22000.riot.SPACE" title="Link to this definition"></a></dt>
 <dd><p>RiotString to match any space character. <code class="docutils literal notranslate"><span class="pre">\s</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="regex_riot_rk22000.riot.one_or_more">
+<span class="sig-prename descclassname"><span class="pre">regex_riot_rk22000.riot.</span></span><span class="sig-name descname"><span class="pre">one_or_more</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#regex_riot_rk22000.riot.one_or_more" title="Link to this definition"></a></dt>
+<dd><p>The current RiotString repeated one or more times.
+Use like so</p>
+<p><code class="docutils literal notranslate"><span class="pre">one_or_more(RiotString('a'))</span> <span class="pre">=&gt;</span> <span class="pre">RiotString('a+')</span></code>
+or
+<code class="docutils literal notranslate"><span class="pre">RiotString('a').one_or_more()</span> <span class="pre">=&gt;</span> <span class="pre">RiotString('a+')</span></code></p>
 </dd></dl>
 
 </section>
