@@ -53,6 +53,7 @@ class RiotString:
 
         """
         return RiotString(self,rs, _operations.then, False)
+
     def one_or_more(self):
         """
         The current RiotString repeated one or more times.
