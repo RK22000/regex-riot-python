@@ -100,3 +100,4 @@ def riot(seed):
     Simplified interface for RiotString
     """
     return RiotString(seed, "", lambda a,b: a, len(seed)==1)
+
