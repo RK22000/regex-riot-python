@@ -2,8 +2,13 @@
 
 [![unit-test-script](https://github.com/RK22000/regex-riot-python/actions/workflows/test.yml/badge.svg)](https://github.com/RK22000/regex-riot-python/actions/workflows/test.yml) 
 
+[![Jupyter Lite](https://jupyterlite.readthedocs.io/en/latest/_static/badge.svg)](https://rk22000.github.io/regex-riot-python/demo/repl/?toolbar=1&kernel=python&code=from%20regex_riot_rk22000.riot%20import%20*%0Aone_or_more(DIGIT).then(DOT).then(one_or_more(DIGIT))) Mess around with it in a repl.
+
+[![Jupyter Lite](https://jupyterlite.readthedocs.io/en/latest/_static/badge.svg)](https://rk22000.github.io/regex-riot-python/demo/notebooks/?path=try_it_out.ipynb) See its effectiveness against a few regex exercises.
+
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RK22000/regex-riot-python/HEAD?labpath=try_it_out.ipynb)
-Try it out with a quick demo.
+Try it out in binder if lite isn't working.
 
 This is a simple example package. You can use
 [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
