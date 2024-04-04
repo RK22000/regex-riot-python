@@ -21,6 +21,8 @@ jobs:
           run: pip install -r env_files/demo.txt
         - name: Make Demo
           run: jupyter lite build --output-dir docs/build/html/demo --contents src/
+        - name: Copy gitignore
+          run: cp .gitignore docs/build/html/.gitignore
         - name: Upload artifacts
           uses: actions/upload-artifact@v4
           with:
