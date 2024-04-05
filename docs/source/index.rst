@@ -22,6 +22,8 @@ See its effectiveness against a few `regex exercises <https://rk22000.github.io/
 Installation 
 ============
 
+RegexRiot can be installed using pip.
+
 .. code::
 
    pip install RegexRiot
