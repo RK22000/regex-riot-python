@@ -7,5 +7,7 @@
 [![Jupyter Lite](https://jupyterlite.readthedocs.io/en/latest/_static/badge.svg)](https://rk22000.github.io/regex-riot-python/demo/notebooks/?path=try_it_out.ipynb) See its effectiveness against a few regex exercises.
 
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RK22000/regex-riot-python/HEAD?labpath=try_it_out.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RK22000/regex-riot-python/HEAD?labpath=src%2Ftry_it_out.ipynb)
 Try it out in binder if lite isn't working.
+
+Check out the documentation [here](https://rk22000.github.io/regex-riot-python/)

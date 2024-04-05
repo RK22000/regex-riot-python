@@ -6,9 +6,9 @@ build-backend = "hatchling.build"
 name = "RegexRiot"
 version = "0.0.1"
 authors = [
-  { name="Example Author", email="author@example.com" },
+  { name="Rahul Kandekar", email="rahukand@gmail.com" },
 ]
-description = "A small example package"
+description = "A simple easy to use and read regex maker."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
