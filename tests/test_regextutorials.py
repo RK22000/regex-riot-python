@@ -2,7 +2,7 @@
 
 """
 
-from src.regex_riot_rk22000.riot import *
+from src.RegexRiot.riot import *
 import unittest
 import re
 
