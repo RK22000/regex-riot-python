@@ -1,6 +1,6 @@
 # Example Package
 
-[![unit-test-script](https://github.com/RK22000/regex-riot-python/actions/workflows/test.yml/badge.svg)](https://github.com/RK22000/regex-riot-python/actions/workflows/test.yml) [![Render Sphinx docs](https://github.com/RK22000/regex-riot-python/actions/workflows/docsite.yml/badge.svg)](https://github.com/RK22000/regex-riot-python/actions/workflows/docsite.yml)
+[![unit-test-script](https://github.com/RK22000/regex-riot-python/actions/workflows/test.yml/badge.svg)](https://github.com/RK22000/regex-riot-python/actions/workflows/test.yml) [![Render Sphinx docs](https://github.com/RK22000/regex-riot-python/actions/workflows/docsite.yml/badge.svg)](https://rk22000.github.io/regex-riot-python/)
 
 [![Jupyter Lite](https://jupyterlite.readthedocs.io/en/latest/_static/badge.svg)](https://rk22000.github.io/regex-riot-python/demo/repl/?toolbar=1&kernel=python&code=from%20regex_riot_rk22000.riot%20import%20*%0Aone_or_more(DIGIT).then(DOT).then(one_or_more(DIGIT))) Mess around with it in a repl.
 
