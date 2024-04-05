@@ -1,3 +1,3 @@
 #! /bin/bash
 
-python -m http.server --directory ./docs/build/html/demo/
+python -m http.server --directory ./docs/build/html/
