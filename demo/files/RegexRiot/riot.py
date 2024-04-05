@@ -89,7 +89,7 @@ SPACE       = RiotString(r'\s', "", lambda a,b: a, unit=True)
 NON_SPACE   = RiotString(r'\S', "", lambda a,b: a, unit=True)
 'RiotString to match any non-space character. ``\S``'
 BOUNDARY    = RiotString(r'\b', "", lambda a,b: a, unit=True)
-'RiotString to match a character at a boundary position. ``\b``'
+'RiotString to match a character at a boundary position. ``\\b``'
 NON_BOUNDARY= RiotString(r'\B', "", lambda a,b: a, unit=True)
 'RiotString to match a character not at a boundary position. ``\B``'
 DOT         = RiotString(r'\.', "", lambda a,b: a, unit=True)
