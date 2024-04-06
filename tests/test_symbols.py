@@ -1,4 +1,4 @@
-from src.RegexRiot.riot import *
+from src.RegexRiot import *
 import unittest
 
 class LiteralsStringValueTests(unittest.TestCase):

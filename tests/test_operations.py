@@ -1,4 +1,4 @@
-from src.RegexRiot.riot import *
+from src.RegexRiot import *
 import unittest
 
 class RiotOperationsString(unittest.TestCase):
@@ -16,3 +16,6 @@ class RiotOperationsString(unittest.TestCase):
         self.assertEqual(str(riot('hello').one_or_more()), r'(hello)+')
         self.assertEqual(str(one_or_more(DIGIT)), r'\d+')
         self.assertEqual(str(one_or_more(riot('hello'))), r'(hello)+')
+
+    def test_one_or_more_around_then(self):
+        self.assertEqual(str(one_or_more(DIGIT.then(ALPHANUM))), r'(\d\w)+')

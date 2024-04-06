@@ -11,7 +11,7 @@ A simple easy to use and read regex maker.
 .. raw:: html
 
    <iframe
-      src="https://rk22000.github.io/regex-riot-python/demo/repl/?toolbar=1&kernel=python&code=from%20RegexRiot.riot%20import%20*%0Aone_or_more(DIGIT).then(DOT).then(one_or_more(DIGIT))"
+      src="demo/repl/?toolbar=1&kernel=python&code=from%20RegexRiot%20import%20*%0Aone_or_more(DIGIT).then(DOT).then(one_or_more(DIGIT))"
       width="100%"
       height="500"
    ></iframe>
@@ -33,7 +33,7 @@ RegexRiot can be installed using pip.
    :hidden:
    :caption: Modules
 
-   RegexRiot
+   RegexRiot/index
    tests/index
 
 
