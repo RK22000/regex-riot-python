@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="RegexTutorials" href="regextutorials.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Test sets" href="../tests/index.html" /><link rel="prev" title="Basic Expressions" href="BasicExpressions.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>Symbols - RegexRiot 0.0.2 documentation</title>
+        <title>RiotString - RegexRiot 0.0.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -157,15 +157,15 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../RegexRiot/index.html">RegexRiot</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of RegexRiot</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../RegexRiot/BasicExpressions.html">Basic Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RegexRiot/RiotString.html">RiotString</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">RegexRiot</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of RegexRiot</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="BasicExpressions.html">Basic Expressions</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">RiotString</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Test sets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Test sets</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="operations.html">Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regextutorials.html">RegexTutorials</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Symbols</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tests/index.html">Test sets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Test sets</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tests/operations.html">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests/regextutorials.html">RegexTutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests/symbols.html">Symbols</a></li>
 </ul>
 </li>
 </ul>
@@ -202,46 +202,64 @@
           </label>
         </div>
         <article role="main">
-          <section id="module-tests.test_symbols">
-<span id="symbols"></span><h1>Symbols<a class="headerlink" href="#module-tests.test_symbols" title="Link to this heading">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="tests.test_symbols.LiteralsStringValueTests">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_symbols.</span></span><span class="sig-name descname"><span class="pre">LiteralsStringValueTests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_symbols.LiteralsStringValueTests" title="Link to this definition">#</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="tests.test_symbols.LiteralsStringValueTests.test_alphanum">
-<span class="sig-name descname"><span class="pre">test_alphanum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_symbols.LiteralsStringValueTests.test_alphanum" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+          <section id="riotstring">
+<h1>RiotString<a class="headerlink" href="#riotstring" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">RiotString</span></code>s are how regex is represented in this library.</p>
+<dl class="py class" id="module-RegexRiot._riot">
+<dt class="sig sig-object py" id="RegexRiot._riot.RiotString">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RegexRiot._riot.</span></span><span class="sig-name descname"><span class="pre">RiotString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combinator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.RiotString" title="Link to this definition">#</a></dt>
+<dd><p>This is the object that will hold and mutate regular expressions. 
+RiotStrings can be composed together to build more complicated regular 
+expressions.</p>
+<p>For instance the expression <code class="docutils literal notranslate"><span class="pre">\d+\.\d+</span></code> can be built using RiotStrings as 
+<code class="docutils literal notranslate"><span class="pre">one_or_more(DIGIT).then(DOT).then(one_or_more(DIGIT))</span></code>. Although this is 
+not as consice as writing the regex itself, with the help of autocomplete it 
+will be easier to write write regex as a chain of function calls that read
+that read out to english like text.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RegexRiot._riot.RiotString.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Pattern</span></span></span><a class="headerlink" href="#RegexRiot._riot.RiotString.compile" title="Link to this definition">#</a></dt>
+<dd><p>Return the compiled regex. This is the result of <code class="docutils literal notranslate"><span class="pre">re.compile(&quot;pattern&quot;)</span></code></p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.test_symbols.LiteralsStringValueTests.test_anything">
-<span class="sig-name descname"><span class="pre">test_anything</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_symbols.LiteralsStringValueTests.test_anything" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="RegexRiot._riot.RiotString.one_or_more">
+<span class="sig-name descname"><span class="pre">one_or_more</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.RiotString.one_or_more" title="Link to this definition">#</a></dt>
+<dd><p>The current RiotString repeated one or more times.
+Use like so</p>
+<p><code class="docutils literal notranslate"><span class="pre">one_or_more(RiotString('a'))</span> <span class="pre">=&gt;</span> <span class="pre">RiotString('a+')</span></code>
+or
+<code class="docutils literal notranslate"><span class="pre">RiotString('a').one_or_more()</span> <span class="pre">=&gt;</span> <span class="pre">RiotString('a+')</span></code></p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.test_symbols.LiteralsStringValueTests.test_boundary">
-<span class="sig-name descname"><span class="pre">test_boundary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_symbols.LiteralsStringValueTests.test_boundary" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="RegexRiot._riot.RiotString.then">
+<span class="sig-name descname"><span class="pre">then</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.RiotString.then" title="Link to this definition">#</a></dt>
+<dd><p>The current RiotString followed by the next RiotString. 
+Use like so</p>
+<p><code class="docutils literal notranslate"><span class="pre">RiotString('a').then(RiotString('b'))</span> <span class="pre">=&gt;</span> <span class="pre">RiotString('ab')</span></code></p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
+<p>rs: The next RiotString or string</p>
+</section>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="tests.test_symbols.LiteralsStringValueTests.test_custom_string">
-<span class="sig-name descname"><span class="pre">test_custom_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_symbols.LiteralsStringValueTests.test_custom_string" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="tests.test_symbols.LiteralsStringValueTests.test_digit">
-<span class="sig-name descname"><span class="pre">test_digit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_symbols.LiteralsStringValueTests.test_digit" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RegexRiot._riot.one_or_more">
+<span class="sig-prename descclassname"><span class="pre">RegexRiot._riot.</span></span><span class="sig-name descname"><span class="pre">one_or_more</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.one_or_more" title="Link to this definition">#</a></dt>
+<dd><p>The current RiotString repeated one or more times.
+Use like so</p>
+<p><code class="docutils literal notranslate"><span class="pre">one_or_more(RiotString('a'))</span> <span class="pre">=&gt;</span> <span class="pre">RiotString('a+')</span></code>
+or
+<code class="docutils literal notranslate"><span class="pre">RiotString('a').one_or_more()</span> <span class="pre">=&gt;</span> <span class="pre">RiotString('a+')</span></code></p>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="tests.test_symbols.LiteralsStringValueTests.test_dot">
-<span class="sig-name descname"><span class="pre">test_dot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_symbols.LiteralsStringValueTests.test_dot" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tests.test_symbols.LiteralsStringValueTests.test_space">
-<span class="sig-name descname"><span class="pre">test_space</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_symbols.LiteralsStringValueTests.test_space" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
+<dl class="py function">
+<dt class="sig sig-object py" id="RegexRiot._riot.riot">
+<span class="sig-prename descclassname"><span class="pre">RegexRiot._riot.</span></span><span class="sig-name descname"><span class="pre">riot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.riot" title="Link to this definition">#</a></dt>
+<dd><p>Simplified interface for RiotString</p>
 </dd></dl>
 
 </section>
@@ -251,15 +269,23 @@
       <footer>
         
         <div class="related-pages">
-          
-          <a class="prev-page" href="regextutorials.html">
+          <a class="next-page" href="../tests/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Test sets</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="BasicExpressions.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">RegexTutorials</div>
+                <div class="title">Basic Expressions</div>
                 
               </div>
             </a>
@@ -300,17 +326,15 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Symbols</a><ul>
-<li><a class="reference internal" href="#tests.test_symbols.LiteralsStringValueTests"><code class="docutils literal notranslate"><span class="pre">LiteralsStringValueTests</span></code></a><ul>
-<li><a class="reference internal" href="#tests.test_symbols.LiteralsStringValueTests.test_alphanum"><code class="docutils literal notranslate"><span class="pre">LiteralsStringValueTests.test_alphanum()</span></code></a></li>
-<li><a class="reference internal" href="#tests.test_symbols.LiteralsStringValueTests.test_anything"><code class="docutils literal notranslate"><span class="pre">LiteralsStringValueTests.test_anything()</span></code></a></li>
-<li><a class="reference internal" href="#tests.test_symbols.LiteralsStringValueTests.test_boundary"><code class="docutils literal notranslate"><span class="pre">LiteralsStringValueTests.test_boundary()</span></code></a></li>
-<li><a class="reference internal" href="#tests.test_symbols.LiteralsStringValueTests.test_custom_string"><code class="docutils literal notranslate"><span class="pre">LiteralsStringValueTests.test_custom_string()</span></code></a></li>
-<li><a class="reference internal" href="#tests.test_symbols.LiteralsStringValueTests.test_digit"><code class="docutils literal notranslate"><span class="pre">LiteralsStringValueTests.test_digit()</span></code></a></li>
-<li><a class="reference internal" href="#tests.test_symbols.LiteralsStringValueTests.test_dot"><code class="docutils literal notranslate"><span class="pre">LiteralsStringValueTests.test_dot()</span></code></a></li>
-<li><a class="reference internal" href="#tests.test_symbols.LiteralsStringValueTests.test_space"><code class="docutils literal notranslate"><span class="pre">LiteralsStringValueTests.test_space()</span></code></a></li>
+<li><a class="reference internal" href="#">RiotString</a><ul>
+<li><a class="reference internal" href="#RegexRiot._riot.RiotString"><code class="docutils literal notranslate"><span class="pre">RiotString</span></code></a><ul>
+<li><a class="reference internal" href="#RegexRiot._riot.RiotString.compile"><code class="docutils literal notranslate"><span class="pre">RiotString.compile()</span></code></a></li>
+<li><a class="reference internal" href="#RegexRiot._riot.RiotString.one_or_more"><code class="docutils literal notranslate"><span class="pre">RiotString.one_or_more()</span></code></a></li>
+<li><a class="reference internal" href="#RegexRiot._riot.RiotString.then"><code class="docutils literal notranslate"><span class="pre">RiotString.then()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#RegexRiot._riot.one_or_more"><code class="docutils literal notranslate"><span class="pre">one_or_more()</span></code></a></li>
+<li><a class="reference internal" href="#RegexRiot._riot.riot"><code class="docutils literal notranslate"><span class="pre">riot()</span></code></a></li>
 </ul>
 </li>
 </ul>

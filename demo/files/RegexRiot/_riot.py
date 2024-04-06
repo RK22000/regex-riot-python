@@ -1,9 +1,3 @@
-"""
-This is the primary module in the regex-riot library. Import everything from
-this module.
-
-"""
-
 import re
 import _operations
 
@@ -64,7 +58,7 @@ class RiotString:
         ``RiotString('a').one_or_more() => RiotString('a+')``
 
         """
-        regex = _operations.one_or_more(self._a, self._unit)
+        regex = _operations.one_or_more(str(self), self._unit)
         return RiotString(regex, "", lambda a,b: a, True)
     
     def compile(self) -> re.Pattern:
@@ -74,26 +68,26 @@ class RiotString:
 one_or_more = RiotString.one_or_more
 
 
-DIGIT       = RiotString(r'\d', "", lambda a,b: a, unit=True)
-'RiotString for a digit. ``\d``'
-NON_DIGIT   = RiotString(r'\D', "", lambda a,b: a, unit=True)
-'RiotString for non digit. ``\D``'
-ANYTHING    = RiotString(r'.', "", lambda a,b: a, unit=True)
-'RiotString to match any digit. ``.``'
-ALPHANUM    = RiotString(r'\w', "", lambda a,b: a, unit=True)
-'RiotString to match any alphanumeric character. ``\w``'
-NON_ALPHANUM= RiotString(r'\W', "", lambda a,b: a, unit=True)
-'RiotString to match any non-alphanumeric character. ``\W``'
-SPACE       = RiotString(r'\s', "", lambda a,b: a, unit=True)
-'RiotString to match any space character. ``\s``'
-NON_SPACE   = RiotString(r'\S', "", lambda a,b: a, unit=True)
-'RiotString to match any non-space character. ``\S``'
-BOUNDARY    = RiotString(r'\b', "", lambda a,b: a, unit=True)
-'RiotString to match a character at a boundary position. ``\\b``'
-NON_BOUNDARY= RiotString(r'\B', "", lambda a,b: a, unit=True)
-'RiotString to match a character not at a boundary position. ``\B``'
-DOT         = RiotString(r'\.', "", lambda a,b: a, unit=True)
-'RiotString to match a dot. ``\.``'
+# DIGIT       = RiotString(r'\d', "", lambda a,b: a, unit=True)
+# 'RiotString for a digit. ``\d``'
+# NON_DIGIT   = RiotString(r'\D', "", lambda a,b: a, unit=True)
+# 'RiotString for non digit. ``\D``'
+# ANYTHING    = RiotString(r'.', "", lambda a,b: a, unit=True)
+# 'RiotString to match any digit. ``.``'
+# ALPHANUM    = RiotString(r'\w', "", lambda a,b: a, unit=True)
+# 'RiotString to match any alphanumeric character. ``\w``'
+# NON_ALPHANUM= RiotString(r'\W', "", lambda a,b: a, unit=True)
+# 'RiotString to match any non-alphanumeric character. ``\W``'
+# SPACE       = RiotString(r'\s', "", lambda a,b: a, unit=True)
+# 'RiotString to match any space character. ``\s``'
+# NON_SPACE   = RiotString(r'\S', "", lambda a,b: a, unit=True)
+# 'RiotString to match any non-space character. ``\S``'
+# BOUNDARY    = RiotString(r'\b', "", lambda a,b: a, unit=True)
+# 'RiotString to match a character at a boundary position. ``\\b``'
+# NON_BOUNDARY= RiotString(r'\B', "", lambda a,b: a, unit=True)
+# 'RiotString to match a character not at a boundary position. ``\B``'
+# DOT         = RiotString(r'\.', "", lambda a,b: a, unit=True)
+# 'RiotString to match a dot. ``\.``'
 
 def riot(seed):
     """
