@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="RiotString" href="RiotString.html" /><link rel="prev" title="RegexRiot" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>Basic Expressions - RegexRiot 0.0.2 documentation</title>
+        <title>Basic Expressions - RegexRiot 0.0.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">RegexRiot 0.0.2 documentation</div></a>
+      <a href="../index.html"><div class="brand">RegexRiot 0.0.3 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -147,7 +147,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">RegexRiot 0.0.2 documentation</span>
+  <span class="sidebar-brand-text">RegexRiot 0.0.3 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -168,6 +168,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../tests/symbols.html">Symbols</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Extra Stuff</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devlog.html">Devlog</a></li>
 </ul>
 
 </div>
@@ -219,9 +223,21 @@ building blocks to build your regex.</p>
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="RegexRiot._basic_expressions.BEGINING">
+<span class="sig-prename descclassname"><span class="pre">RegexRiot._basic_expressions.</span></span><span class="sig-name descname"><span class="pre">BEGINING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RiotString:</span> <span class="pre">&quot;^&quot;&gt;</span></em><a class="headerlink" href="#RegexRiot._basic_expressions.BEGINING" title="Link to this definition">#</a></dt>
+<dd><p>RiotString to match the begining of a line. <code class="docutils literal notranslate"><span class="pre">^</span></code></p>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="RegexRiot._basic_expressions.BOUNDARY">
 <span class="sig-prename descclassname"><span class="pre">RegexRiot._basic_expressions.</span></span><span class="sig-name descname"><span class="pre">BOUNDARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RiotString:</span> <span class="pre">&quot;\b&quot;&gt;</span></em><a class="headerlink" href="#RegexRiot._basic_expressions.BOUNDARY" title="Link to this definition">#</a></dt>
 <dd><p>RiotString to match a character at a boundary position. <code class="docutils literal notranslate"><span class="pre">\b</span></code></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="RegexRiot._basic_expressions.CLOSE_PARENTHESIS">
+<span class="sig-prename descclassname"><span class="pre">RegexRiot._basic_expressions.</span></span><span class="sig-name descname"><span class="pre">CLOSE_PARENTHESIS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RiotString:</span> <span class="pre">&quot;\)&quot;&gt;</span></em><a class="headerlink" href="#RegexRiot._basic_expressions.CLOSE_PARENTHESIS" title="Link to this definition">#</a></dt>
+<dd><p>RiotString to match a close round parenthesis . <code class="docutils literal notranslate"><span class="pre">\)</span></code></p>
 </dd></dl>
 
 <dl class="py data">
@@ -234,6 +250,12 @@ building blocks to build your regex.</p>
 <dt class="sig sig-object py" id="RegexRiot._basic_expressions.DOT">
 <span class="sig-prename descclassname"><span class="pre">RegexRiot._basic_expressions.</span></span><span class="sig-name descname"><span class="pre">DOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RiotString:</span> <span class="pre">&quot;\.&quot;&gt;</span></em><a class="headerlink" href="#RegexRiot._basic_expressions.DOT" title="Link to this definition">#</a></dt>
 <dd><p>RiotString to match a dot. <code class="docutils literal notranslate"><span class="pre">\.</span></code></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="RegexRiot._basic_expressions.END">
+<span class="sig-prename descclassname"><span class="pre">RegexRiot._basic_expressions.</span></span><span class="sig-name descname"><span class="pre">END</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RiotString:</span> <span class="pre">&quot;$&quot;&gt;</span></em><a class="headerlink" href="#RegexRiot._basic_expressions.END" title="Link to this definition">#</a></dt>
+<dd><p>RiotString to match the end of a line. <code class="docutils literal notranslate"><span class="pre">$</span></code></p>
 </dd></dl>
 
 <dl class="py data">
@@ -258,6 +280,12 @@ building blocks to build your regex.</p>
 <dt class="sig sig-object py" id="RegexRiot._basic_expressions.NON_SPACE">
 <span class="sig-prename descclassname"><span class="pre">RegexRiot._basic_expressions.</span></span><span class="sig-name descname"><span class="pre">NON_SPACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RiotString:</span> <span class="pre">&quot;\S&quot;&gt;</span></em><a class="headerlink" href="#RegexRiot._basic_expressions.NON_SPACE" title="Link to this definition">#</a></dt>
 <dd><p>RiotString to match any non-space character. <code class="docutils literal notranslate"><span class="pre">\S</span></code></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="RegexRiot._basic_expressions.OPEN_PARENTHESIS">
+<span class="sig-prename descclassname"><span class="pre">RegexRiot._basic_expressions.</span></span><span class="sig-name descname"><span class="pre">OPEN_PARENTHESIS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RiotString:</span> <span class="pre">&quot;\(&quot;&gt;</span></em><a class="headerlink" href="#RegexRiot._basic_expressions.OPEN_PARENTHESIS" title="Link to this definition">#</a></dt>
+<dd><p>RiotString to match an open round parenthesis . <code class="docutils literal notranslate"><span class="pre">\(</span></code></p>
 </dd></dl>
 
 <dl class="py data">
@@ -333,13 +361,17 @@ building blocks to build your regex.</p>
 <li><a class="reference internal" href="#">Basic Expressions</a><ul>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.ALPHANUM"><code class="docutils literal notranslate"><span class="pre">ALPHANUM</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.ANYTHING"><code class="docutils literal notranslate"><span class="pre">ANYTHING</span></code></a></li>
+<li><a class="reference internal" href="#RegexRiot._basic_expressions.BEGINING"><code class="docutils literal notranslate"><span class="pre">BEGINING</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.BOUNDARY"><code class="docutils literal notranslate"><span class="pre">BOUNDARY</span></code></a></li>
+<li><a class="reference internal" href="#RegexRiot._basic_expressions.CLOSE_PARENTHESIS"><code class="docutils literal notranslate"><span class="pre">CLOSE_PARENTHESIS</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.DIGIT"><code class="docutils literal notranslate"><span class="pre">DIGIT</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.DOT"><code class="docutils literal notranslate"><span class="pre">DOT</span></code></a></li>
+<li><a class="reference internal" href="#RegexRiot._basic_expressions.END"><code class="docutils literal notranslate"><span class="pre">END</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.NON_ALPHANUM"><code class="docutils literal notranslate"><span class="pre">NON_ALPHANUM</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.NON_BOUNDARY"><code class="docutils literal notranslate"><span class="pre">NON_BOUNDARY</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.NON_DIGIT"><code class="docutils literal notranslate"><span class="pre">NON_DIGIT</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.NON_SPACE"><code class="docutils literal notranslate"><span class="pre">NON_SPACE</span></code></a></li>
+<li><a class="reference internal" href="#RegexRiot._basic_expressions.OPEN_PARENTHESIS"><code class="docutils literal notranslate"><span class="pre">OPEN_PARENTHESIS</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._basic_expressions.SPACE"><code class="docutils literal notranslate"><span class="pre">SPACE</span></code></a></li>
 </ul>
 </li>
@@ -352,7 +384,7 @@ building blocks to build your regex.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=e3a6060d"></script>
+</div><script src="../_static/documentation_options.js?v=47de8214"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

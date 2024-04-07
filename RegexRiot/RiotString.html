@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Test sets" href="../tests/index.html" /><link rel="prev" title="Basic Expressions" href="BasicExpressions.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>RiotString - RegexRiot 0.0.2 documentation</title>
+        <title>RiotString - RegexRiot 0.0.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">RegexRiot 0.0.2 documentation</div></a>
+      <a href="../index.html"><div class="brand">RegexRiot 0.0.3 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -147,7 +147,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">RegexRiot 0.0.2 documentation</span>
+  <span class="sidebar-brand-text">RegexRiot 0.0.3 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -168,6 +168,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../tests/symbols.html">Symbols</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Extra Stuff</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devlog.html">Devlog</a></li>
 </ul>
 
 </div>
@@ -206,6 +210,11 @@
 <h1>RiotString<a class="headerlink" href="#riotstring" title="Link to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">RiotString</span></code>s are how regex is represented in this library.</p>
 <dl class="py class" id="module-RegexRiot._riot">
+<dt class="sig sig-object py" id="RegexRiot._riot.RiotSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RegexRiot._riot.</span></span><span class="sig-name descname"><span class="pre">RiotSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.RiotSet" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="RegexRiot._riot.RiotString">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RegexRiot._riot.</span></span><span class="sig-name descname"><span class="pre">RiotString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combinator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.RiotString" title="Link to this definition">#</a></dt>
 <dd><p>This is the object that will hold and mutate regular expressions. 
@@ -258,7 +267,7 @@ or
 
 <dl class="py function">
 <dt class="sig sig-object py" id="RegexRiot._riot.riot">
-<span class="sig-prename descclassname"><span class="pre">RegexRiot._riot.</span></span><span class="sig-name descname"><span class="pre">riot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.riot" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">RegexRiot._riot.</span></span><span class="sig-name descname"><span class="pre">riot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RegexRiot._riot.riot" title="Link to this definition">#</a></dt>
 <dd><p>Simplified interface for RiotString</p>
 </dd></dl>
 
@@ -327,6 +336,7 @@ or
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">RiotString</a><ul>
+<li><a class="reference internal" href="#RegexRiot._riot.RiotSet"><code class="docutils literal notranslate"><span class="pre">RiotSet</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._riot.RiotString"><code class="docutils literal notranslate"><span class="pre">RiotString</span></code></a><ul>
 <li><a class="reference internal" href="#RegexRiot._riot.RiotString.compile"><code class="docutils literal notranslate"><span class="pre">RiotString.compile()</span></code></a></li>
 <li><a class="reference internal" href="#RegexRiot._riot.RiotString.one_or_more"><code class="docutils literal notranslate"><span class="pre">RiotString.one_or_more()</span></code></a></li>
@@ -346,7 +356,7 @@ or
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=e3a6060d"></script>
+</div><script src="../_static/documentation_options.js?v=47de8214"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

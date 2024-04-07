@@ -13,14 +13,14 @@ A simple easy to use and read regex maker.
    <iframe
       src="demo/repl/?toolbar=1&kernel=python&code=from%20RegexRiot%20import%20*%0Aone_or_more(DIGIT).then(DOT).then(one_or_more(DIGIT))"
       width="100%"
-      height="500"
+      height="300"
    ></iframe>
 
 
 See its effectiveness against a few `regex exercises <https://rk22000.github.io/regex-riot-python/demo/notebooks/?path=try_it_out.ipynb>`_.
 
 Installation 
-============
+------------
 
 RegexRiot can be installed using pip.
 
@@ -36,9 +36,15 @@ RegexRiot can be installed using pip.
    RegexRiot/index
    tests/index
 
+.. toctree::
+   :hidden:
+   :caption: Extra Stuff
+
+   devlog
+
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
