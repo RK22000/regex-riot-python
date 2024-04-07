@@ -3,7 +3,7 @@ RegexTutorials
 
 These are tests based on the exercises on `REGEXTUTORIALS`_. 
 
-.. REGEXTUTORIALS: http://regextutorials.com/index.html
+.. _REGEXTUTORIALS: http://regextutorials.com
 
 .. automodule:: tests.test_regextutorials
     :members:
