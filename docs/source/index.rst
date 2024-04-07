@@ -18,6 +18,7 @@ A simple easy to use and read regex maker.
 
 
 See its effectiveness against a few `regex exercises`_ 
+
 .. _regex exercises: tryitout/floating_point_numbers.html
 
 Installation 
