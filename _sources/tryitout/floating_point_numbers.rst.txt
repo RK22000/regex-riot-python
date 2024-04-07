@@ -4,7 +4,7 @@
 
 Match numbers containing floating point. Skip those that don't.
 
-.. code-block::raw
+.. code-block::
     :linenos:
 
     Speed of light in vacuum 299792458 m/s
