@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "RegexRiot"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Rahul Kandekar", email="rahukand@gmail.com" },
 ]

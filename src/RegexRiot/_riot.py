@@ -67,31 +67,28 @@ class RiotString:
 
 one_or_more = RiotString.one_or_more
 
+class RiotSet(RiotString):
+    def __init__(self, *args, to=None) -> None:
+        self.elements = [str(i) for i in args]
+        self.to = str(to)
+        if to is not None:
+            assert len(args)==1, f"Got multiple arguments for set range start {str(args)}"
+            a = f"[{self.elements[0]}-{self.to}]"
+        else:
+            a = f"[{''.join(self.elements)}]"
+        
+        super().__init__(a, "", lambda a,b: a, True)
 
-# DIGIT       = RiotString(r'\d', "", lambda a,b: a, unit=True)
-# 'RiotString for a digit. ``\d``'
-# NON_DIGIT   = RiotString(r'\D', "", lambda a,b: a, unit=True)
-# 'RiotString for non digit. ``\D``'
-# ANYTHING    = RiotString(r'.', "", lambda a,b: a, unit=True)
-# 'RiotString to match any digit. ``.``'
-# ALPHANUM    = RiotString(r'\w', "", lambda a,b: a, unit=True)
-# 'RiotString to match any alphanumeric character. ``\w``'
-# NON_ALPHANUM= RiotString(r'\W', "", lambda a,b: a, unit=True)
-# 'RiotString to match any non-alphanumeric character. ``\W``'
-# SPACE       = RiotString(r'\s', "", lambda a,b: a, unit=True)
-# 'RiotString to match any space character. ``\s``'
-# NON_SPACE   = RiotString(r'\S', "", lambda a,b: a, unit=True)
-# 'RiotString to match any non-space character. ``\S``'
-# BOUNDARY    = RiotString(r'\b', "", lambda a,b: a, unit=True)
-# 'RiotString to match a character at a boundary position. ``\\b``'
-# NON_BOUNDARY= RiotString(r'\B', "", lambda a,b: a, unit=True)
-# 'RiotString to match a character not at a boundary position. ``\B``'
-# DOT         = RiotString(r'\.', "", lambda a,b: a, unit=True)
-# 'RiotString to match a dot. ``\.``'
 
-def riot(seed):
+def riot(seed, *args, to=None):
     """
     Simplified interface for RiotString
     """
-    return RiotString(seed, "", lambda a,b: a, len(seed)==1)
+    if not args and to is None:
+        return RiotString(seed, "", lambda a,b: a, len(seed)==1)
+    if not to is None:
+        assert not args, f"Got extra argument for range start {args}"
+        return RiotSet(seed, to=to)
+    else:
+        return RiotSet(seed, *args)
 

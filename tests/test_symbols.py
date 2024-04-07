@@ -29,3 +29,12 @@ class LiteralsStringValueTests(unittest.TestCase):
         words = ['hello','there', ',', ' ', 'general', 'kenobi']
         for w in words:
             self.assertEqual(str(riot(w)), w)
+    
+    def test_begining_and_end(self):
+        self.assertEqual(str(BEGINING), r'^')
+        self.assertEqual(str(END), r'$')
+    
+    def test_round_parentheses(self):
+        self.assertEqual(str(OPEN_PARENTHESIS), r'\(')
+        self.assertEqual(str(CLOSE_PARENTHESIS), r'\)')
+        

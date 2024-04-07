@@ -41,11 +41,59 @@ class RegexTutorials(unittest.TestCase):
                 pattern.findall(test),
                 matchs
             )
+    
+    @unittest.expectedFailure
+    def test_Years_before_1990(self):
+        """
+        This is exercise 2 http://regextutorials.com/excercise.html?Years%20before%201990
+
+        Match titles of all films produced before 1990.
+
+        1 The Shawshank Redemption (1994)
+
+        2 The Godfather (1972)
+
+        3 The Godfather: Part II (1974)
+
+        4 Pulp Fiction (1994)
+        
+        5 The Good, the Bad and the Ugly (1966)
+
+        6 The Dark Knight (2008)
+
+        7 12 Angry Men (1957)
+
+        8 Schindler's List (1993)
+
+        9 The Lord of the Rings: The Return of the King (2003)
+
+        10 Fight Club (1999)
+
+        """
+        lines = [
+            ["1 The Shawshank Redemption (1994)", False],
+            ["2 The Godfather (1972)", True],
+            ["3 The Godfather: Part II (1974)", True],
+            ["4 Pulp Fiction (1994)", False],
+            ["5 The Good, the Bad and the Ugly (1966)", True],
+            ["6 The Dark Knight (2008)", False],
+            ["7 12 Angry Men (1957)", True],
+            ["8 Schindler's List (1993)", False],
+            ["9 The Lord of the Rings: The Return of the King (2003)", False],
+            ["10 Fight Club (1999)", False],
+        ]
+        pattern = BEGINING.then(one_or_more(ANYTHING)).then(OPEN_PARENTHESIS) \
+            .then(1).then(DIGIT).then(riot(0, to=8)).then(DIGIT) \
+            .then(CLOSE_PARENTHESIS).compile()
+        print(pattern)
+
+        for l, m in lines:
+            self.assertEqual(m, pattern.fullmatch(l) is not None)
 
     @unittest.expectedFailure
     def test_Hexadecimal_colors(self):
         """
-        This test is exercise 2 http://regextutorials.com/excercise.html?Hexadecimal%20colors
+        This test is exercise 3 http://regextutorials.com/excercise.html?Hexadecimal%20colors
 
         Match 24-bit hexadecimal colors. Skip 12 bit colors.
 

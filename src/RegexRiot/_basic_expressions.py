@@ -20,3 +20,14 @@ NON_BOUNDARY= RiotString(r'\B', "", lambda a,b: a, unit=True)
 'RiotString to match a character not at a boundary position. ``\B``'
 DOT         = RiotString(r'\.', "", lambda a,b: a, unit=True)
 'RiotString to match a dot. ``\.``'
+BEGINING    = RiotString(r'^', "", lambda a,b: a, unit=True)
+'RiotString to match the begining of a line. ``^``'
+END         = RiotString(r'$', "", lambda a,b: a, unit=True)
+'RiotString to match the end of a line. ``$``'
+OPEN_PARENTHESIS = RiotString(r'\(', "", lambda a,b: a, unit=True)
+'RiotString to match an open round parenthesis . ``\(``'
+CLOSE_PARENTHESIS = RiotString(r'\)', "", lambda a,b: a, unit=True)
+'RiotString to match a close round parenthesis . ``\)``'
+
+
+
