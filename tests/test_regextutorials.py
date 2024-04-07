@@ -42,7 +42,6 @@ class RegexTutorials(unittest.TestCase):
                 matchs
             )
     
-    @unittest.expectedFailure
     def test_Years_before_1990(self):
         """
         This is exercise 2 http://regextutorials.com/excercise.html?Years%20before%201990
@@ -85,7 +84,6 @@ class RegexTutorials(unittest.TestCase):
         pattern = BEGINING.then(one_or_more(ANYTHING)).then(OPEN_PARENTHESIS) \
             .then(1).then(DIGIT).then(riot(0, to=8)).then(DIGIT) \
             .then(CLOSE_PARENTHESIS).compile()
-        print(pattern)
 
         for l, m in lines:
             self.assertEqual(m, pattern.fullmatch(l) is not None)
