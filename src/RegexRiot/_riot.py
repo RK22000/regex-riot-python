@@ -64,7 +64,7 @@ class RiotString:
         regex = _operations.one_or_more(str(self), self._unit)
         return RiotString(regex, "", lambda a,b: a, True)
     
-    def times(self, n):
+    def times(self, n, to=None):
         """
         The current RiotString repeated n times.
         Use like so
@@ -72,13 +72,24 @@ class RiotString:
         ``RiotString('a').times(5) => RiotString('a{5}')``
 
         """
-        regex = _operations.times(str(self), n, self._unit)
+        if to is None:
+            rng = str(n)
+        else:
+            assert to > n, "Range end {to} must be greater than ranger start {n}"
+            rng = f"{n},{to}"
+        regex = _operations.times(str(self), rng, self._unit)
         return RiotString(regex, "", lambda a,b:a, self._unit)
+    
+    def as_group(self):
+        return RiotString(f"({self})", "", lambda a,b:a, True)
+    
     def compile(self) -> re.Pattern:
         """Return the compiled regex. This is the result of ``re.compile("pattern")``"""
         return re.compile(str(self))
 
 one_or_more = RiotString.one_or_more
+as_group = RiotString.as_group
+group_no = lambda n: RiotString(f"\\{n}", "", lambda a,b:a, True)
 
 class RiotSet(RiotString):
     def __init__(self, *args, to=None, inverted=False) -> None:

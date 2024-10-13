@@ -136,3 +136,60 @@ class RegexTutorials(unittest.TestCase):
                 pattern.findall(test),
                 matchs
             )
+
+    def test_Greyscale_colors(self):
+        """
+        Match 12 and 24 bit colors whose red, green and blue components are equal. Colors start with a '#'.
+        Greyscale colors are those that have the same rgb value
+        
+        24 bit:
+
+        Alice Blue #F0F8FF
+
+        Black #000000
+
+        Antique White #FAEBD7
+
+        Dark Grey #a9a9a9
+
+        Aqua #00FFFF
+
+        Azure #F0FFFF
+
+        Battleship grey #848484
+
+        12 bit:
+
+        White #FFF
+
+        Red #F00
+
+        Green #0F0
+
+        Black #000
+
+        """
+        lines = [
+                ["24 bit:", None],
+                ["Alice Blue #F0F8FF", None],
+                ["Black #000000", "#000000"],
+                ["Antique White #FAEBD7", None],
+                ["Dark Grey #a9a9a9", "#a9a9a9"],
+                ["Aqua #00FFFF",None],
+                ["Azure #F0FFFF", None],
+                ["Battleship grey #848484", "#848484"],
+                ["12 bit:", None],
+                ["White #FFF", "#FFF"],
+                ['Red #F00', None],
+                ['Green #0F0', None],
+                ['Black #000', '#000']
+            ]
+        pattern = riot("#").then(as_group(HEXADECIMAL.times(1,2))).then(group_no(1).times(2)).compile()
+        for test, matchs in lines:
+            m = pattern.search(test)
+            t = m.group() if m is not None else None
+            self.assertEqual(
+                t,
+                matchs,
+                f'Testing {test}, expected matchs {matchs}'
+            )
