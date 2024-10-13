@@ -1,4 +1,4 @@
-from _riot import RiotString
+from _riot import RiotString, riot
 
 DIGIT       = RiotString(r'\d', "", lambda a,b: a, unit=True)
 'RiotString for a digit. ``\d``'
@@ -28,6 +28,8 @@ OPEN_PARENTHESIS = RiotString(r'\(', "", lambda a,b: a, unit=True)
 'RiotString to match an open round parenthesis . ``\(``'
 CLOSE_PARENTHESIS = RiotString(r'\)', "", lambda a,b: a, unit=True)
 'RiotString to match a close round parenthesis . ``\)``'
+HEXADECIMAL = riot('A-F', 'a-f', '\d')
+'RiotString to match hexadecimals'
 
 
 
