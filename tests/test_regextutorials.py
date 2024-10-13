@@ -139,6 +139,8 @@ class RegexTutorials(unittest.TestCase):
 
     def test_Greyscale_colors(self):
         """
+        This is test exercise 4 http://regextutorials.com/excercise.html?Grayscale%20colors
+        
         Match 12 and 24 bit colors whose red, green and blue components are equal. Colors start with a '#'.
         Greyscale colors are those that have the same rgb value
         
@@ -193,3 +195,26 @@ class RegexTutorials(unittest.TestCase):
                 matchs,
                 f'Testing {test}, expected matchs {matchs}'
             )
+    
+    def test_Long_lines(self):
+        """
+        This is exercice 5 http://regextutorials.com/excercise.html?Too%20long%20lines
+        
+        Match lines that are more than 30 characters long.
+        
+        This line is way too loooooooooooong.
+
+        This one is fine too.
+
+        This line is also too long................
+
+        """
+        lines = [
+            ["This line is way too loooooooooooong.", True],
+            ["This one is fine.", False],
+            ["This one is fine too.", False],
+            ["This line is also too long................", True]
+        ]
+        patern = ANYTHING.times(30, to="").compile()
+        for l, m in lines:
+            self.assertEqual(m, patern.fullmatch(l) is not None)

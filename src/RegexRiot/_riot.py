@@ -70,12 +70,19 @@ class RiotString:
         Use like so
 
         ``RiotString('a').times(5) => RiotString('a{5}')``
+        ``RiotString('a').times(5, to=7) => RiotString('a{5,7}')``
+        ``RiotString('a').times(5, to='') => RiotString('a{5,}')``
+        
+        parameter ``to`` can either be end of a range or empty string for unbounded range
 
         """
         if to is None:
             rng = str(n)
         else:
-            assert to > n, "Range end {to} must be greater than ranger start {n}"
+            if isinstance(to, int):
+                assert to > n, "Range end {to} must be greater than ranger start {n}"
+            else:
+                assert to == ""
             rng = f"{n},{to}"
         regex = _operations.times(str(self), rng, self._unit)
         return RiotString(regex, "", lambda a,b:a, self._unit)
