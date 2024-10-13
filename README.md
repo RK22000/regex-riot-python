@@ -8,3 +8,9 @@
 Try it out in binder if lite isn't working.
 
 Check out the documentation [here](https://rk22000.github.io/regex-riot-python/)
+
+## Run unit tests
+
+```
+python3 -m unittest
+```

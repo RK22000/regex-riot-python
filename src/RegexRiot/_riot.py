@@ -1,5 +1,8 @@
 import re
 import _operations
+import logging
+
+logger = logging.getLogger("RegexRiot")
 
 class RiotString:
     """
@@ -61,6 +64,16 @@ class RiotString:
         regex = _operations.one_or_more(str(self), self._unit)
         return RiotString(regex, "", lambda a,b: a, True)
     
+    def times(self, n):
+        """
+        The current RiotString repeated n times.
+        Use like so
+
+        ``RiotString('a').times(5) => RiotString('a{5}')``
+
+        """
+        regex = _operations.times(str(self), n, self._unit)
+        return RiotString(regex, "", lambda a,b:a, self._unit)
     def compile(self) -> re.Pattern:
         """Return the compiled regex. This is the result of ``re.compile("pattern")``"""
         return re.compile(str(self))
@@ -68,17 +81,25 @@ class RiotString:
 one_or_more = RiotString.one_or_more
 
 class RiotSet(RiotString):
-    def __init__(self, *args, to=None) -> None:
-        self.elements = [str(i) for i in args]
-        self.to = str(to)
-        if to is not None:
-            assert len(args)==1, f"Got multiple arguments for set range start {str(args)}"
-            a = f"[{self.elements[0]}-{self.to}]"
+    def __init__(self, *args, to=None, inverted=False) -> None:
+        if len(args) == 0:
+            raise Exception("Can't create an empty set")
+        if len(args) == 1:
+            assert to is not None, f"Got a range start {args[0]} but no range end"
+            self.elements = [f'{args[0]}-{to}']
         else:
-            a = f"[{''.join(self.elements)}]"
-        
+            assert to is None, f"Got a range end {to} for multiple possible starts"
+            if args[0] == '^':
+                logger.warning("'^' was first element in set. Moving it to be last")
+                args = args[1:]+args[:1]
+            self.elements = [str(i) for i in args]
+        a = f"[{'^' if inverted else ''}{''.join(self.elements)}]"
         super().__init__(a, "", lambda a,b: a, True)
+    def invert(self):
+        revert = str(self)[1] == '^'
+        return RiotSet(self.elements, inverted = False if revert else True)
 
+invert = RiotSet.invert
 
 def riot(seed, *args, to=None):
     """

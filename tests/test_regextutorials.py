@@ -88,7 +88,6 @@ class RegexTutorials(unittest.TestCase):
         for l, m in lines:
             self.assertEqual(m, pattern.fullmatch(l) is not None)
 
-    @unittest.expectedFailure
     def test_Hexadecimal_colors(self):
         """
         This test is exercise 3 http://regextutorials.com/excercise.html?Hexadecimal%20colors
@@ -131,7 +130,7 @@ class RegexTutorials(unittest.TestCase):
                 ["Green #0F0", []],
                 ["Blue #00F", []],
             ]
-        pattern = RiotString("#").compile()
+        pattern = riot("#").then(HEXADECIMAL.times(6)).compile()
         for test, matchs in lines:
             self.assertEqual(
                 pattern.findall(test),
